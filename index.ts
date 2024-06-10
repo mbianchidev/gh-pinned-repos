@@ -21,7 +21,7 @@ const cache = new LRU({
 
 async function ghPinnedRepos(username: string) {
   const $ = await aimer(`https://github.com/${username}`);
-  const pinned = $(".pinned-item-list-item.public").toArray();
+  const pinned = $(".js-pinned-items-reorder-list").toArray();
 
   // if empty
   if (!pinned || pinned.length === 0) return [];
